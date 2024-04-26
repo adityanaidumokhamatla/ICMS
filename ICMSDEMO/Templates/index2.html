@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <!-- Combined CSS for navbar -->
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Quicksand", sans-serif;
+        font-size: 62.5%;
+        font-size: 10px;
+    }
+
+    /* Navbar section */
+    .nav {
+        width: 100%;
+        height: 65px;
+        position: fixed;
+        line-height: 65px;
+        text-align: center;
+    }
+
+    .nav div.logo {
+        float: left;
+        width: auto;
+        height: auto;
+        padding-left: 3rem;
+    }
+
+    .nav div.logo a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2.5rem;
+    }
+
+    .nav div.logo a:hover {
+        color: #00E676;
+    }
+
+    .nav div.main_list {
+        height: 65px;
+        float: right;
+    }
+
+    .nav div.main_list ul {
+        width: 100%;
+        height: 65px;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav div.main_list ul li {
+        width: auto;
+        height: 65px;
+        padding: 0;
+        padding-right: 3rem;
+    }
+
+    .nav div.main_list ul li a {
+        text-decoration: none;
+        color: #fff;
+        line-height: 65px;
+        font-size: 2.4rem;
+    }
+
+    .nav div.main_list ul li a:hover {
+        color: #00E676;
+    }
+
+
+    /* Home section */
+    .home {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        overflow: hidden;
+        position: relative; /* Added position relative */
+    }
+
+    .home .slide {
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        animation: slideshow 12s infinite;
+        position: relative; /* Added position relative */
+    }
+
+    .home .quote-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 1;
+        display: none; /* Hidden by default */
+    }
+
+    .home .quote-container p {
+        color: #000; /* Black font color */
+        font-size: 3rem; /* Increased font size for quote */
+        margin-bottom: 30px; /* Increased margin */
+    }
+
+    .home .quote-container .explorenow-btn {
+        display: inline-block;
+        background-color: #000; /* Black button background */
+        color: #fff; /* White font color */
+        padding: 20px 40px; /* Increased padding for button */
+        border-radius: 8px; /* Rounded corners */
+        text-decoration: none;
+        font-size: 2.5rem; /* Increased font size for button */
+    }
+
+    .home .slide:hover .quote-container {
+        display: block; /* Show quote-container on hover */
+    }
+
+    @keyframes slideshow {
+        0%, 100% {
+            opacity: 1;
+        }
+        25% {
+            opacity: 0;
+        }
+        50% {
+            background-position: top left;
+        }
+        75% {
+            background-position: top right;
+        }
+    }
+
+  .nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent background */
+    transition: top 0.3s, background-color 0.3s; /* Added background-color transition */
+    z-index: 1000; /* Ensure the navbar is above other elements */
+}
+
+.nav.fixed {
+    top: 0; /* Keep the navbar at the top when scrolled down */
+    background-color: rgba(0, 0, 0, 0.7); /* Change background color to opaque when fixed */
+}
+
+/* Rest of the CSS remains the same */
+.nav div.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px; /* Added padding */
+}
+
+.nav div.logo {
+    float: left;
+    height: auto;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.nav div.logo a:hover {
+    color: #00E676;
+}
+
+.nav div.main_list {
+    display: flex;
+    align-items: center;
+}
+
+.nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    margin-right: 3rem;
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2.4rem;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #00E676;
+}
+
+
+    @keyframes inM {
+         50% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(45deg);
+        }
+    }
+
+    @keyframes inT {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(9px) rotate(135deg);
+        }
+    }
+
+    @keyframes outT {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(9px) rotate(135deg);
+        }
+    }
+
+    @keyframes inBtm {
+        0% {
+            transform: translateY(0px) rotate(0deg
+    );
+        }
+        50% {
+            transform: translateY(-9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-9px) rotate(135deg);
+        }
+    }
+
+    @keyframes outBtm {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-9px) rotate(135deg);
+        }
+    }
+
+    .affix {
+        padding: 0;
+        background-color: #111;
+    }
+
+    .myH2 {
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    .myP {
+        text-align: justify;
+        padding-left: 15%;
+        padding-right: 15%;
+        font-size: 20px;
+    }
+
+    @media all and (max-width: 700px) {
+        .myP {
+            padding: 2%;
+        }
+    }
+       .featured-culture {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .culture-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .culture-item {
+            flex: 1 1 300px; /* Adjust as needed */
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #f2f2f2;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .culture-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .culture-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #f2f2f2;
+        }
+
+        .culture-item h3 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .culture-item p {
+            font-size: 1rem;
+            color: #666;
+            padding: 0 20px 20px;
+        }
+
+        /* Yellow line animation */
+        .culture-item::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: yellow;
+            transition: width 0.3s ease;
+        }
+
+        .culture-item:hover::before {
+            width: 100%;
+        }
+.timeline {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative; /* Added position */
+    z-index: 1; /* Ensure timeline is above slides */
+}
+
+.headline {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+.headline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #00E676;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+}
+
+.headline:hover::after {
+    transform: scaleX(1);
+}
+
+.timeline {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative;
+    z-index: 1; /* Ensure timeline is above slides */
+}
+
+.headline {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    z-index: 2; /* Ensure headline is above green transition */
+}
+
+.headline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #00E676;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+}
+
+.headline:hover::after {
+    transform: scaleX(1);
+}
+
+.timeline {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative;
+    z-index: 1; /* Ensure timeline is above slides */
+}
+
+.headline {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: #000; /* Changed font color to black */
+    position: relative;
+    cursor: pointer;
+    z-index: 2; /* Ensure headline is above green transition */
+}
+
+
+.headline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #00E676;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    z-index: 1; /* Ensure green transition is below headline */
+}
+
+.headline:hover::after {
+    transform: scaleX(1);
+}
+
+.timeline .event {
+    border-left: 2px solid #00E676;
+    margin-bottom: 40px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.timeline .event:last-child {
+    margin-bottom: 0;
+}
+
+.timeline .event .content {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.timeline .event .date {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    background-color: #00E676;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.timeline .event .content h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+.timeline .event .content p {
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+
+    /* Footer section */
+    .footer {
+        z-index: 1;
+        --footer-background: #0C0C0C;
+        display: grid;
+        position: relative;
+        grid-area: footer;
+        min-height: 12rem;
+    }
+    .footer .bubbles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1rem;
+        background: var(--footer-background);
+        filter: url("#blob");
+    }
+
+    .footer .bubbles .bubble {
+        position: absolute;
+        left: var(--position, 50%);
+        background: var(--footer-background);
+        border-radius: 100%;
+        animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+            bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+        transform: translate(-50%, 100%);
+    }
+
+    .footer .content {
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: 4rem;
+        padding: 2rem;
+        background: var(--footer-background);
+    }
+
+    .footer .content a,
+    .footer .content p {
+        color: #f5f7fa;
+        text-decoration: none;
+    }
+
+    .footer .content b {
+        color: white;
+    }
+
+    .footer .content p {
+        margin: 0;
+        font-size: 0.75rem;
+    }
+
+    .footer .content>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer .content>div>div {
+        margin: 0.25rem 0;
+    }
+
+    .footer .content>div>div>* {
+        margin-right: 0.5rem;
+    }
+
+    .footer .content .image {
+        align-self: center;
+        width: 4rem;
+        height: 4rem;
+        margin: 0.25rem 0;
+        background-size: cover;
+        background-position: center;
+    }
+
+    @keyframes bubble-size {
+        0%, 75% {
+            width: var(--size, 4rem);
+            height: var(--size, 4rem);
+        }
+        100% {
+            width: 0rem;
+            height: 0rem;
+        }
+    }
+
+    @keyframes bubble-move {
+        0% {
+            bottom: -4rem;
+        }
+        100% {
+            bottom: var(--distance, 10rem);
+        }
+    }
+
+    /* Event Calendar CSS */
+    /* Include your event calendar CSS styles here */
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+
+
+
+</style>
+
+
+    <!-- SVG filter for bubbles -->
+    <svg style="display: none;">
+        <defs>
+            <filter id="blob">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob" />
+                <feComposite in="SourceGraphic" in2="blob" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#">ICMS</a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Resources</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+                    <li><a href="{% url 'logout' %}" >Logout</a></li>
+
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5jcmVkaWJsZSUyMGluZGlhfGVufDB8fDB8fHww');">
+            <div class="quote-container">
+                <p>Explore  The  INDIA  </p>
+                <a href="{% url 'login' %}" class="explorenow-btn">Explore  Now</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1532664189809-02133fee698d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5jcmVkaWJsZSUyMGluZGlhfGVufDB8fDB8fHww');">
+            <!-- No quote here -->
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1515091943-9d5c0ad475af?q=80&w=1535&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <!-- No quote here -->
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1523544545175-92e04b96d26b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <!-- No quote here -->
+        </div>
+    </section>
+       <div class="featured-culture">
+            <h2>Featured Cultural Highlights</h2>
+            <div class="culture-grid">
+                <div class="culture-item">
+                    <img src="https://images.pexels.com/photos/14106731/pexels-photo-14106731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Indian Dance">
+                    <h3>Dance</h3>
+                    <p>Experience the rich tapestry of Indian dance forms.</p>
+                </div>
+                <div class="culture-item">
+                    <img src="https://img.freepik.com/free-photo/photorealistic-lohri-festival-celebration-with-people_23-2151098186.jpg?t=st=1714031477~exp=1714035077~hmac=a90152084de6f948559c2b1a8b6d91f689ae1e79a66d3996c2871081a70c00ff&w=996"
+                        alt="Indian Music">
+                    <h3>Music</h3>
+                    <p>Explore the melodious sounds of traditional Indian music.</p>
+                </div>
+                <div class="culture-item">
+                    <img src="https://images.pexels.com/photos/190589/pexels-photo-190589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Indian Art">
+                    <h3>Art</h3>
+                    <p>Discover the vibrant world of Indian art and its history.</p>
+                </div>
+                <div class="culture-item">
+                    <img src="https://images.pexels.com/photos/3373054/pexels-photo-3373054.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="Indian Festivals">
+                    <h3>Festivals</h3>
+                    <p>Celebrate the diversity of Indian culture through its festivals.</p>
+                </div>
+            </div>
+        </div>
+<div class="timeline">
+    <h1 class="headline">Journey of INDIA</h1>
+    <div class="event">
+        <div class="date">1947</div>
+        <div class="content">
+            <h3>Independence from British rule</h3>
+            <p>In 1947, India gained independence from British rule, marking the end of nearly two centuries of colonialism.
+</p>
+        </div>
+    </div>
+    <!-- Second Event -->
+    <div class="event">
+        <div class="date">1950</div>
+        <div class="content">
+            <h3>Adoption of the Constitution of India </h3>
+            <p>The period following independence saw the drafting and adoption of the Constitution of India in 1950, laying the foundation for a democratic republic.</p>
+        </div>
+    </div>
+    <!-- Third Event -->
+    <div class="event">
+        <div class="date">1950s and 1960s</div>
+        <div class="content">
+            <h3>Struggles Between 1950s and 1960s</h3>
+            <p>Throughout the 1950s and 1960s, India focused on nation-building efforts, including economic development, infrastructure expansion, and social reforms.</p>
+        </div>
+    </div>
+    <!-- Fourth Event -->
+    <div class="event">
+        <div class="date">1970s and 1980s</div>
+        <div class="content">
+            <h3>Periods of political turbulence</h3>
+            <p>The 1970s and 1980s witnessed periods of political turbulence, economic challenges, and social movements, shaping India's trajectory as a diverse and vibrant democracy.</p>
+        </div>
+    </div>
+    <!-- Fifth Event -->
+    <div class="event">
+        <div class="date">1991</div>
+        <div class="content">
+            <h3>Rapid economic growth</h3>
+            <p>In 1991, India initiated economic liberalization reforms, ushering in an era of globalization and rapid economic growth.
+</p>
+        </div>
+    </div>
+    <!-- Sixth Event -->
+    <div class="event">
+        <div class="date">21st century</div>
+        <div class="content">
+            <h3>Major global player</h3>
+            <p>By the turn of the 21st century, India emerged as a major global player, known for its technological advancements, cultural richness, and growing influence on the world stage.</p>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="footer">
+        <div class="bubbles">
+            <!-- Generate bubbles dynamically using JavaScript -->
+            <script>
+                for (var i = 0; i < 128; i++) {
+                    var bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    bubble.style.setProperty('--size', 2 + Math.random() * 4 + 'rem');
+                    bubble.style.setProperty('--distance', 6 + Math.random() * 4 + 'rem');
+                    bubble.style.setProperty('--position', -5 + Math.random() * 110 + '%');
+                    bubble.style
+
+.setProperty('--time', 2 + Math.random() * 2 + 's');
+                    bubble.style.setProperty('--delay', -1 * (2 + Math.random() * 2) + 's');
+                    document.querySelector('.bubbles').appendChild(bubble);
+                }
+            </script>
+        </div>
+        <div class="content">
+            <div>
+                <div>
+                    <b>Eldew</b>
+                    <a href="#">Secuce</a>
+                    <a href="#">Drupand</a>
+                    <a href="#">Oceash</a>
+                    <a href="#">Ugefe</a>
+                    <a href="#">Babed</a>
+                </div>
+                <div>
+                    <b>Spotha</b>
+                    <a href="#">Miskasa</a>
+                    <a href="#">Agithe</a>
+                    <a href="#">Scesha</a>
+                    <a href="#">Lulle</a>
+                </div>
+                <div>
+                    <b>Chashakib</b>
+                    <a href="#">Chogauw</a>
+                    <a href="#">Phachuled</a>
+                    <a href="#">Tiebeft</a>
+                    <a href="#">Ocid</a>
+                    <a href="#">Izom</a>
+                    <a href="#">Ort</a>
+                </div>
+                <div>
+                    <b>Athod</b>
+                    <a href="#">Pamuz</a>
+                    <a href="#">Vapert</a>
+                    <a href="#">Neesk</a>
+                    <a href="#">Omemanen</a>
+                </div>
+            </div>
+            <div>
+
+                <a class="image" href="https://codepen.io/z-" target="_blank"
+                    style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg')"></a>
+                <p>©2019 Not Really</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Jquery needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+        // You need this to get the nav links to work
+        $('.navTrigger').click(function () {
+            $(this).toggleClass('active');
+            console.log("Clicked menu");
+            $("#mainListDiv").toggleClass("show_list");
+            $("#mainListDiv").fadeIn();
+
+        });
+    </script>
+</body>
+</html>

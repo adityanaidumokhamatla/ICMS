@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Life - About Us</title>
+    <style>
+        :root {
+            --txt-body: 0.9rem;
+            --txt-h1: 18vw;
+            --txt-h2: 5vw;
+            --txt-h3: 1.15rem;
+            --txt-h4: 1.125rem;
+            --txt-h5: 1.1rem;
+
+            --clr-black: #222;
+            --clr-dark: #353535;
+            --clr-primary: #e6e;
+            --clr-primary-dark: #949;
+            --clr-alt-1: #59f;
+            --clr-alt-1-light: #cef;
+            --clr-alt-2: #bfb;
+            --clr-alt-2-dark: #7e7;
+
+            --skew: -10deg;
+            --half-skew: 7.5deg;
+        }
+
+        @media screen and (min-width: 34em) {
+            :root {
+                --txt-body: 1.1rem;
+                --txt-h1: 6rem;
+                --txt-h2: 1.5rem;
+            }
+        }
+
+        @media screen and (min-width: 47em) {
+            :root {
+                --txt-body: 1.2rem;
+                --txt-h1: 8rem;
+                --txt-h2: 2rem;
+            }
+        }
+
+        html {
+            font-family: "Ubunutu", sans-serif;
+            color: var(--clr-black);
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /*
+        TYPOGRAPHY
+        */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        p {
+            font-size: var(--txt-body);
+            margin-bottom: var(--txt-body);
+        }
+
+        article > p:first-of-type:first-letter {
+            position: relative;
+            display: inline-block;
+            float: left;
+            font-size: 3rem;
+            font-family: "Monoton", sans-serif;
+            color: var(--clr-black);
+            padding: 0 0.25em;
+            line-height: 1.2;
+            transform: skewy(var(--half-skew));
+        }
+
+        /*
+        LAYOUT
+        */
+
+        article {
+            padding: 1em;
+            max-width: 48em;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 40%;
+            border-radius: 1em;
+            box-shadow: 0 1em 1em -1em #00000066, 0.5em 0 2em 0 #00000022,
+                -0.5em 0 2em 0 #00000022;
+            margin: 1em;
+        }
+
+        @media screen and (min-width: 47em) {
+            img {
+                max-width: 45%;
+            }
+        }
+
+        @media screen and (min-width: 60em) {
+            img {
+                max-width: 30%;
+            }
+        }
+
+        figure {
+            position: relative;
+            max-width: 32em;
+            margin: 2em auto;
+        }
+
+        @media screen and (min-width: 47em) {
+            figure {
+                float: right;
+            }
+
+            figure:nth-child(even) {
+                float: left;
+            }
+        }
+
+        figcaption {
+            display: inline-block;
+            font-size: 0.6rem;
+            color: var(--clr-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: #ffffff88;
+            padding: 1em;
+            border-radius: 3em;
+        }
+
+        figcaption::before,
+        figcaption::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+        }
+
+        figcaption::before {
+            inset: 1em;
+            background: var(--clr-alt-1-light);
+            transform: translate(3em, 0em) skewy(var(--half-skew));
+        }
+
+        .fig-alt::before {
+            inset: 1em;
+            background: var(--clr-alt-2);
+            transform: translate(-3.5em, -2em) skewy(var(--skew));
+        }
+
+        figcaption::after {
+            height: 18em;
+            width: 18em;
+            bottom: 0;
+            left: -2em;
+            border-radius: 50%;
+            background: #fa7;
+        }
+
+        /*
+        SITE STYLES
+        */
+
+        /*HEADER*/
+
+        .headline {
+            position: relative;
+            font-family: "Arcade Life", sans-serif;
+            font-size: var(--txt-h1);
+            line-height: 0.95;
+            font-weight: 400;
+            color: var(--clr-black);
+            text-shadow: 0 0.025em 0.05em #00000055, 0.1em 0.05em 0.1em #00000044;
+            margin: 0.25em 0.25em 15vw;
+            transform: skewy(var(--skew));
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: var(--txt-h2);
+            text-transform: uppercase;
+            color: #505056;
+            letter-spacing: 0.1em;
+            margin: 2em 0 1em;
+        }
+
+        .subhead {
+            position: relative;
+            transform: skewy(var(--half-skew));
+            border-top: 2em solid var(--clr-primary);
+            box-shadow: 0 -3em 0 var(--clr-alt-2);
+            text-align: center;
+            margin: -2em auto 1em;
+            padding: 1em;
+        }
+
+        .subhead::before,
+        .subhead::after {
+            content: "";
+            position: absolute;
+        }
+
+        .subhead::before {
+            top: -8em;
+            left: -5em;
+            width: 16em;
+            height: 10.5em;
+            background: linear-gradient(90deg, var(--clr-alt-1), #5599ff00);
+            z-index: -1;
+        }
+
+        .subhead::after {
+            width: 6em;
+            height: 2.1em;
+            right: 2em;
+            top: -5em;
+            background: #fff;
+            border-top: 3em solid var(--clr-dark);
+        }
+
+        /*ARTICLE META*/
+
+        .article-meta,
+        .author-info {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+        }
+
+        .article-meta {
+            flex-direction: column;
+            margin-bottom: 2em;
+        }
+
+        .author-info {
+            color: var(--clr-dark);
+            opacity: 0.8;
+        }
+
+        .article-meta p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="headline">About<br />Us</h1>
+        <h2 class="subhead">Developers who developed this site are:</h2>
+        <div class="article-meta">
+            <div class="author-info">
+                <!-- Removed logo -->
+            </div>
+        </div>
+    </header>
+    <article>
+        <!-- Your article content here -->
+        <figure>
+            <!-- First image -->
+            <img src="https://i.pinimg.com/originals/75/c2/5e/75c25e08d99ad4f034002e4fdd7d8af0.jpg" alt="Allu Arjun">
+            <figcaption>Allu Arjun</figcaption>
+        </figure>
+        <figure>
+            <!-- Second image -->
+            <img src="https://i.pinimg.com/originals/aa/7d/52/aa7d5294dfc5a5f95a3f498b74dbbf02.jpg" alt="DQ Salman">
+            <figcaption>DQ Salman</figcaption>
+        </figure>
+        <figure>
+            <!-- Third image -->
+            <img src="https://i.pinimg.com/originals/3d/81/00/3d8100da76d9b0263b089e86d214cafc.jpg" alt="Priyanka Mohan">
+            <figcaption>Priyanka Mohan</figcaption>
+        </figure>
+    </article>
+</body>
+</html>
